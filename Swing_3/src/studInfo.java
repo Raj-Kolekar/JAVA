@@ -15,6 +15,23 @@ public class studInfo extends WindowAdapter {
 		f.setVisible(true);
 		
 		
+		
+		init();
+		addComponent();
+		
+		SUBMIT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				submitButtonClicked();
+			}});
+		
+		CANCEL.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				f.dispose();
+			}});
+		
+	}
+	
+	private void init() {
 		name = new JLabel("Name");
 		roll = new JLabel("Roll Number");
 		DOB = new JLabel("DOB");
@@ -37,22 +54,7 @@ public class studInfo extends WindowAdapter {
 		tf7 = new JTextField();
 		tf8 = new JTextField();
 		tf9 = new JTextField();
-		init();
-		addComponent();
 		
-		SUBMIT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				submitButtonClicked();
-			}});
-		
-		CANCEL.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				f.dispose();
-			}});
-		
-	}
-	
-	private void init() {
 		name.setBounds(20,20,120,20);	tf1.setBounds(140,20,120,20);
 		roll.setBounds(20,60,120,20);	tf2.setBounds(140,60,60,20);
 		DOB.setBounds(20,100,120,20);	tf3.setBounds(140,100,60,20);

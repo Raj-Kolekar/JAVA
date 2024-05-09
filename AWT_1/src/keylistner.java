@@ -1,67 +1,105 @@
+
 import java.awt.*;
 import java.awt.event.*;
 
 public class keylistner extends WindowAdapter implements KeyListener{
-	Label l;
-	TextArea t;
+	
 	Frame f;
+	TextArea t;
+	Label l;
 	
 	public keylistner() {
-		f = new Frame("Key Listner");
+		f = new Frame("Keylistner");
 		f.setSize(400,400);
-		f.setVisible(true);
 		f.setLayout(null);
+		f.setVisible(true);
 		
 		init();
-		add_Components();
+		add_Component();
 	}
-	
-	public void init() {
-		l = new Label();
-		t = new TextArea();
-		l.setBounds(20,50,300,20);
-		t.setBounds(20,80,300,300);
-		
-		f.addWindowListener(this);
-		t.addKeyListener(this);
-	}
-	
-	public void add_Components() {
-		f.add(l);
-		f.add(t);
-	}
-	
 	public void windowClosing(WindowEvent e) {
 		f.dispose();
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new keylistner();
-
+	
+	public void init() {
+		l = new Label("Press key");
+		l.setBounds(20,20,100,80);
+		t = new TextArea();
+		t.setBounds(20,100,250,250);
+		
+		t.addKeyListener(this);
+		f.addWindowListener(this);
+	}
+	
+	public void add_Component() {
+		f.add(l);
+		f.add(t);
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		l.setText("Key Typed");
+		l.setText("Key is Typed");
 		
-		f.setBackground(Color.RED);
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		l.setText("Key Pressed");
-		f.setBackground(Color.CYAN);
+		l.setText("Key is Pressed");
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		l.setText("Key Released");
-		f.setBackground(Color.blue);
+		l.setText("Key is Released");
 	}
 	
+	public static void main(String args[]) {
+		new keylistner();
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
