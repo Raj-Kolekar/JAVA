@@ -1,0 +1,67 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class keylistner extends WindowAdapter implements KeyListener{
+	Label l;
+	TextArea t;
+	Frame f;
+	
+	public keylistner() {
+		f = new Frame("Key Listner");
+		f.setSize(400,400);
+		f.setVisible(true);
+		f.setLayout(null);
+		
+		init();
+		add_Components();
+	}
+	
+	public void init() {
+		l = new Label();
+		t = new TextArea();
+		l.setBounds(20,50,300,20);
+		t.setBounds(20,80,300,300);
+		
+		f.addWindowListener(this);
+		t.addKeyListener(this);
+	}
+	
+	public void add_Components() {
+		f.add(l);
+		f.add(t);
+	}
+	
+	public void windowClosing(WindowEvent e) {
+		f.dispose();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new keylistner();
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		l.setText("Key Typed");
+		
+		f.setBackground(Color.RED);
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		l.setText("Key Pressed");
+		f.setBackground(Color.CYAN);
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		l.setText("Key Released");
+		f.setBackground(Color.blue);
+	}
+	
+	
+}

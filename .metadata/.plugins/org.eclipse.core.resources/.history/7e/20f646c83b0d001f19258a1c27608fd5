@@ -1,0 +1,8 @@
+
+public class RMIClient {
+
+	public RMIClient() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

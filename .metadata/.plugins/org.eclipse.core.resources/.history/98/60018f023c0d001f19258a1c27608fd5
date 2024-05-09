@@ -1,0 +1,16 @@
+import java.rmi.Naming;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+
+public class RMIServer {
+    public static void main(String[] args) {
+        try {
+            LocateRegistry.createRegistry(4000); // Create RMI registry on port 1099
+            Calculator calculator = new CalculatorImpl();
+            Naming.rebind("CalculatorService", calculator); // Bind the service to the RMI registry
+            System.out.println("RMI Server is running...");
+        } catch (Exception e) {
+            System.out.println("Error in Server "+ e);
+        }
+    }
+}

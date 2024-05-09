@@ -1,0 +1,8 @@
+
+public class CalculatorImpl {
+
+	public CalculatorImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

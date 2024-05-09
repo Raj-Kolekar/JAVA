@@ -1,0 +1,32 @@
+
+public class is_Palindrome {
+
+	public static void main(String[] args) {
+		String str = "HELLO";
+		try {
+			if(palindrome(str)) {
+				System.out.println("Yes");
+			}else {
+				System.out.println("No");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static boolean palindrome(String str) {
+		int s = 0;
+		int e = str.length() - 1;
+		
+		while(s < e) {
+			if( str.charAt(s)  != str.charAt(e)) {
+				return false;
+			}
+			s++;
+			e--;
+		}
+		return true;
+	}
+
+}

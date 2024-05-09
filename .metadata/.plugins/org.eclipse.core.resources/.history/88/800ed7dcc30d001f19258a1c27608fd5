@@ -1,0 +1,121 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class studInfo extends WindowAdapter {
+	JFrame f;
+	JLabel name , roll , DOB , div , s1 , s2 , s3 , s4 , s5;
+	JButton SUBMIT , CANCEL;
+	JTextField tf1 , tf2 , tf3 , tf4 , tf5 , tf6 , tf7 , tf8 , tf9 ;
+
+	public studInfo() {
+		f = new JFrame("Student Information Form");
+		f.setSize(700,700);
+		f.setLayout(null);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		name = new JLabel("Name");
+		roll = new JLabel("Roll Number");
+		DOB = new JLabel("DOB");
+		div = new JLabel("Div");
+		s1 = new JLabel("Subject1");
+		s2 = new JLabel("Subject2");
+		s3 = new JLabel("Subject3");
+		s4 = new JLabel("Subject4");
+		s5 = new JLabel("Subject5");
+		
+		SUBMIT = new JButton("SUBMIT");
+		CANCEL = new JButton("CANCEL");
+		
+		tf1 = new JTextField();
+		tf2 = new JTextField();
+		tf3 = new JTextField();
+		tf4 = new JTextField();
+		tf5 = new JTextField();
+		tf6 = new JTextField();
+		tf7 = new JTextField();
+		tf8 = new JTextField();
+		tf9 = new JTextField();
+		init();
+		addComponent();
+		
+		SUBMIT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				submitButtonClicked();
+			}});
+		
+		CANCEL.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				f.dispose();
+			}});
+		
+	}
+	
+	private void init() {
+		name.setBounds(20,20,120,20);	tf1.setBounds(140,20,120,20);
+		roll.setBounds(20,60,120,20);	tf2.setBounds(140,60,60,20);
+		DOB.setBounds(20,100,120,20);	tf3.setBounds(140,100,60,20);
+		div.setBounds(20,140,120,20);	tf4.setBounds(140,140,60,20);
+		s1.setBounds(100,180,100,20);	s1.setBounds(200,180,100,20);		s1.setBounds(300,180,100,20);		s1.setBounds(400,180,100,20);		s1.setBounds(500,180,100,20);
+		tf5.setBounds(100,200,100,20);  tf6.setBounds(100,200,100,20);		tf7.setBounds(100,200,100,20);		tf8.setBounds(100,200,100,20);		tf9.setBounds(100,200,100,20);
+	}
+	
+	private void addComponent() {
+		f.add(name);
+		f.add(roll);
+		f.add(DOB);
+		f.add(div);
+		
+		f.add(s1);
+		f.add(s2);
+		f.add(s3);
+		f.add(s4);
+		f.add(s5);
+		
+		f.add(tf1);
+		f.add(tf2);
+		f.add(tf3);
+		f.add(tf4);
+		f.add(tf5);
+		f.add(tf6);
+		f.add(tf7);
+		f.add(tf8);
+		f.add(tf9);
+		
+		f.add(SUBMIT);
+		f.add(CANCEL);
+	}
+	
+	public void windowClosing(WindowEvent e) {
+		f.dispose();
+	}
+	
+	public void submitButtonClicked() {
+		double percentage = calculatePercentage();
+		String info = "Name:" + tf1.getText() +
+				"\nRoll Number: " + tf2.getText()+
+				"\nDOB:" + tf3.getText() +
+				"\nDivision:" + tf4.getText()+
+				"\nPercentage:" + percentage + "%";
+		JOptionPane.showInternalMessageDialog(f, info, "Student info", JOptionPane.INFORMATION_MESSAGE);
+		f.dispose();
+		
+	}
+	
+	private double calculatePercentage() {
+		int m1 = Integer.parseInt(tf5.getText());
+		int m2 = Integer.parseInt(tf6.getText());
+		int m3 = Integer.parseInt(tf7.getText());
+		int m4 = Integer.parseInt(tf8.getText());
+		int m5 = Integer.parseInt(tf9.getText());
+		
+		return (m1+m2+m3+m4+m5)/5.0;
+	}
+
+	public static void main(String[] args) {
+		
+		new studInfo();
+	}
+
+}

@@ -1,0 +1,24 @@
+//import java.rmi.Naming;
+import java.rmi.*;
+import java.util.*;
+
+public class RMIClient {
+    public static void main(String[] args) {
+        try {
+            Calculator calculator = (Calculator) Naming.lookup("rmi://localhost/CalculatorService");
+            Scanner sc = new Scanner(System.in);
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
+            int result1 = calculator.add(a, b);
+            int result2 = calculator.sub(a, b);
+            int result3 = calculator.mul(a, b);
+            
+            System.out.println("Additon is : " + result1);
+            System.out.println("Subtraction is : " + result2);
+            System.out.println("Multiplication is : " + result3);
+        } catch (Exception e) {
+            System.out.println("Error in Client: "+e);
+        }
+    }
+}

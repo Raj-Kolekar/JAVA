@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.studyopedia.Exception_&apos; to &apos;ExceptioHandling&apos;&#x0D;&#x0A;- Original project: &apos;Assignment_9&apos;&#x0D;&#x0A;- Original element: &apos;com.studyopedia.Exception_&apos;&#x0D;&#x0A;- Renamed element: &apos;com.studyopedia.ExceptioHandling&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Exception_&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.studyopedia{ExceptionHandling.java[Exception_" matchStrategy="1" name="ExceptioHandling" qualified="false" references="true" similarDeclarations="false" stamp="1699327303939" textual="false" version="1.0"/>
+</session>

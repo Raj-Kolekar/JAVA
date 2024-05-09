@@ -1,0 +1,19 @@
+//import java.rmi.Naming;
+import java.rmi.*;
+import java.util.*;
+
+public class RMIClient {
+    public static void main(String[] args) {
+        try {
+            Calculator calculator = (Calculator) Naming.lookup("rmi://localhost/CalculatorService");
+            Scanner sc = new Scanner(System.in);
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
+            int result = calculator.add(a, b);
+            System.out.println("Result: " + result); // Output should be 8
+        } catch (Exception e) {
+            System.out.println("Error in Client "+e);
+        }
+    }
+}

@@ -1,0 +1,179 @@
+import java.sql.*;
+import java.util.Scanner;
+
+public class jdbc_demo{
+	Connection con = null;
+	Statement stat;
+	jdbc_demo() throws ClassNotFoundException, SQLException{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con = DriverManager.getConnection("jdbc:mysql://localhost/orginal" , "root" , "raj123");
+		stat = con.createStatement();
+		System.out.println("Connection Successful");
+		String sql = "INSERT INTO student VALUES(32337, RAJ)";
+		int rs = stat.executeUpdate(sql);
+			
+	}
+	
+	public void retrive_data() throws SQLException {
+		String sql = "SELCT * FROM student";
+		ResultSet rs = stat.executeQuery(sql);
+		while(rs.next()) {
+			int r_n = rs.getInt("ROLL_NO");
+			String name = rs.getString("name");
+			System.out.println("Roll Number: " + r_n);
+			System.out.println("Name " + name + "\n");	
+		}
+
+	}
+	public void insert_data() throws SQLException {
+		String sql = "INSERT INTO student VALUES(32337, RAJ)";
+		int rs = stat.executeUpdate(sql);
+		
+	}
+	public static void main(String args[]) throws ClassNotFoundException, SQLException {
+		jdbc_demo obj = new jdbc_demo();
+//		int ch;
+//		int choice;
+//		Scanner sc = new Scanner(System.in);
+//		Scanner s = new Scanner(System.in);
+//		choice = sc.nextInt();
+/*
+		try {
+			do {
+				System.out.println("Enter the task to perform: \n1.Retrive \n2.Insert");
+				switch(choice) {
+					case 1:
+						obj.retrive_data();
+						break;
+						
+					case 2:
+						obj.insert_data();
+						System.out.println("Data inserted");
+						break;
+						
+					default:
+							System.out.println("Enter valid choice");
+				}
+				System.out.println("Enter 1 to continue and enter 0 to terminate");
+				ch = sc.nextInt();
+				
+			}while(ch != 0);
+		}
+		catch(Exception e) {
+			System.err.println("Error:" + e.getMessage());
+		}*/
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import java.sql.*; 
+ 
+public class jdbc_demo
+{ 
+	 public static void main(String [] args) 
+	 { 
+		 Connection con = null; 
+		 try 
+		 { 
+			 Class.forName("com.mysql.cj.jdbc.Driver");
+			 con = DriverManager.getConnection("jdbc:mysql://localhost/orginal","root","raj123"); 
+			 System.out.println("Connection Successful!"); 
+			 Statement stat=con.createStatement(); 
+			 int result=stat.executeUpdate("CREATE TABLE My_table(Roll INT,StudName VARCHAR(20))"); 
+			 System.out.println("Table Created"); 
+			 stat.close(); 
+			 con.close(); 
+		 } 
+		 catch (ClassNotFoundException e) 
+		 { 
+			 System.err.println("Exception: "+e.getMessage()); 
+		 } 
+		 catch (SQLException e) 
+		 { 
+			 System.err.println("Exception: "+e.getMessage()); 
+		 } 
+	 } 
+ } 
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.*;
+
+public class jdbc_demo {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Connection conn;
+		Class.forName("com.mysql.cj.jdbc.Driver"); 
+		conn = DriverManager
+				.getConnection("jdbc:mysql://localhost:3306/orginal","root","raj123"); 
+		System.out.println("Connection Created");
+		Statement stmt = conn.createStatement(); 
+		String sql = "SELECT * FROM orginal"; 
+		ResultSet rs = stmt.executeQuery(sql); 
+	}
+
+}
+*/

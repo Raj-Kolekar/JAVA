@@ -1,0 +1,34 @@
+import java.sql.*; 
+ 
+public class select_cmd { 
+	 public static void main(String [ ] args) { 
+		 Connection con = null; 
+		 try { 
+			 Class.forName("com.mysql.cj.jdbc.Driver"); 
+			 con=DriverManager.getConnection("jdbc:mysql://localhost/orginal","root","raj123"); 
+			 Statement stat=con.createStatement(); 
+			 
+			 // Using SELECT Query
+			 String sql="SELECT * FROM title"; 
+			 ResultSet rs=stat.executeQuery(sql); 
+			 System.out.println("Displaying the contents of the table..."); 
+			 while(rs.next()) 
+			 { 
+			 int w_id = rs.getInt("WORKER_REF_ID"); 
+			 String title = rs.getString("WORKER_TITLE"); 
+			 //Display values 
+			 System.out.print("Roll Number: " + w_id); 
+			 System.out.print(", Student Name: " + title); 
+			 } 
+			 rs.close(); 
+			 stat.close(); 
+			 con.close(); 
+		 } 
+		 catch (ClassNotFoundException e) { 
+			 System.err.println("Exception: "+e.getMessage()); 
+		 } 
+		 catch (SQLException e) { 
+			 System.err.println("Exception: "+e.getMessage()); 
+		 } 
+	 } 
+ }

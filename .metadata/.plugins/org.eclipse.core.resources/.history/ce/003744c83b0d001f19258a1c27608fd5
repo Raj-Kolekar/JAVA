@@ -1,0 +1,8 @@
+
+public class RMIServer {
+
+	public RMIServer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

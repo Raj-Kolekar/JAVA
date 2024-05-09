@@ -1,0 +1,10 @@
+import java.rmi.registry.LocateRegistry;
+
+public class server{
+	
+	public static void main(String args[]) {
+		LocateRegistry.createRegistry(1099);
+		PrintC ans = new PrintC();
+		
+	}
+}

@@ -1,0 +1,31 @@
+import java.rmi.Naming;
+import java.util.Scanner;
+
+public class Client{
+	
+	public static void main(String args[]) {
+		try {
+			PrintI ans = (PrintI) Naming.lookup("rmi://localhost/palindrome");
+			
+			System.out.println("Enter Number:");
+			Scanner sc = new Scanner(System.in);
+			int x = sc.nextInt();
+			if(ans.is_palindrome(x)) {
+				System.out.println("Number is a Palindrome.");
+			}else {
+				System.out.println("Number is a Palindrome.");
+			}
+			
+			System.out.println("Enter String:");
+			String y = sc.nextLine();
+			if(ans.is_palindrome(y)) {
+				System.out.println("String is a Palindrome.");
+			}else {
+				System.out.println("String is a Palindrome.");
+			}
+			
+		}catch(Exception e) {
+			System.err.println("Exception occured at Client : " + e.getMessage());
+		}
+	}
+}
