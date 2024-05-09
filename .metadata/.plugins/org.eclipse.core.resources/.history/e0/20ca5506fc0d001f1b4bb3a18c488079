@@ -9,7 +9,7 @@ public class select_cmd {
 			 Statement stat=con.createStatement(); 
 			 
 			 // Using SELECT Query
-			 String sql="INSERT INTO student VALUES(32335 , 'Manish'),(32336 , 'Prasad')"; 
+			 //String sql="INSERT INTO student VALUES(32335 , 'Manish'),(32336 , 'Prasad')"; 
 			 //int rs=stat.executeUpdate(sql); 
 			 String sq="DROP TABLE student"; 
 			 int rs=stat.executeUpdate(sq);
