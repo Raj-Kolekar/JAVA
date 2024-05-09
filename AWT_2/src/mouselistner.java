@@ -10,6 +10,7 @@ public class mouselistner extends WindowAdapter implements MouseListener {
 		f.setSize(500,500);
 		f.setVisible(true);
 		f.setLayout(null);
+		
 		init();
 		add_Components();
 	}
